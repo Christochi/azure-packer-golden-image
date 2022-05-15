@@ -27,6 +27,13 @@ build {
 
   sources = ["source.azure-arm.tochi-image"]
 
+  # install packages using ansible
+  provisioner "ansible" {
+
+    playbook_file = var.playbook-dir
+
+  }
+
 }
 
 ###############################
@@ -118,6 +125,14 @@ variable "managed-image-rg-name" {
 
   type        = string
   description = "name of RG to store image"
+  default     = ""
+
+}
+
+variable "playbook-dir" {
+
+  type        = string
+  description = "anisble playbook path"
   default     = ""
 
 }
