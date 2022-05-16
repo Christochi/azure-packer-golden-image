@@ -20,7 +20,6 @@ az_image_name         = "your-custom-image-name"
 managed-image-rg-name = "your-resource-group" # not parker created
 ~~~
 
-- rename the `variables.auto.pkrvars.hcl.example` to `variables.auto.pkrvars.hcl`
 - you can also change the `location`, `img-publisher`, `img-offer`, `img-sku`, `os-type` in the `variables.auto.pkrvars.hcl` **(optional)**
 
 #### Usage Example
@@ -31,6 +30,8 @@ img-sku               = "18.04-LTS"
 location              = "Canada Central"
 os-type               = "Linux"
 ~~~
+
+- rename the `variables.auto.pkrvars.hcl.example` to `variables.auto.pkrvars.hcl`
 
 - run `packer fmt .` for formatting code **(optional)**
 - run `packer validate .` for ensuring no syntax error **(optional)**
