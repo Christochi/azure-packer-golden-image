@@ -1,0 +1,7 @@
+# Installation steps
+- hosts: all
+  become: yes
+
+  roles:
+    - vault-install
+    

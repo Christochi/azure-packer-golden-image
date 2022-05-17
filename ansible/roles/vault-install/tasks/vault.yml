@@ -1,0 +1,16 @@
+- name: Install Vault
+  unarchive:
+    remote_src: yes # file to unpack exists in target server
+    src: "{{vault_bin_src}}"
+    dest: "{{vault_bin_dest}}"
+    owner: root
+    group: root
+ 
+- name: Create Vault User
+  user:
+    name: "{{vault_user}}"
+    system: yes
+    shell: /bin/false # not a login account
+    home: "{{vault_config_path}}"
+    createhome: no
+    append: yes

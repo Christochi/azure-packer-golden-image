@@ -1,0 +1,6 @@
+- name: Call Task Rhel-Packages
+  import_tasks: rhel-packages.yml
+
+- name: Call Task Vault
+  import_tasks: vault.yml
+
