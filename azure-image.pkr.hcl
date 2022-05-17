@@ -28,10 +28,10 @@ build {
   sources = ["source.azure-arm.tochi-image"]
 
   # install packages using ansible
-  # provisioner "ansible" {
+  provisioner "ansible" {
 
-  #   playbook_file = var.playbook-dir
+    playbook_file = var.playbook-dir
 
-  # }
+  }
 
 }
