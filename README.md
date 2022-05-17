@@ -12,7 +12,7 @@ builds custom image using a base image from azure, uploads the files and install
 
 #### Usage Example
 ~~~
-client-id             = "c5bgyg0-575-556z-419a-..."
+client-id             = "c5bgyg0-575-....."
 client-secret         = "AdCD419~F...."
 subscription-id       = "c4774376-......"
 tenant-id             = "b9rc7889-....."
