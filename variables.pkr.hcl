@@ -91,10 +91,10 @@ variable "managed-image-rg-name" {
 
 }
 
-# variable "playbook-dir" {
+variable "playbook-dir" {
 
-#   type        = string
-#   description = "anisble playbook path"
-#   default     = ""
+  type        = string
+  description = "anisble playbook path"
+  default     = ""
 
-# }
+}
