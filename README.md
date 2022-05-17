@@ -24,9 +24,9 @@ managed-image-rg-name = "your-resource-group" # not parker created
 
 #### Usage Example
 ~~~
-img-publisher         = "Canonical"
-img-offer             = "UbuntuServer"
-img-sku               = "18.04-LTS"
+img-publisher         = "Redhat"
+img-offer             = "RHEL"
+img-sku               = "8.2"
 location              = "Canada Central"
 os-type               = "Linux"
 ~~~
