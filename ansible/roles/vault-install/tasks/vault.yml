@@ -35,3 +35,10 @@
     state: started
     enabled: yes
   when: vault_service is changed
+
+- name: Populate Service Facts
+  service_facts:
+
+- name: Print Vault Status
+  debug:
+    var: ansible_facts.services['vault.service'].status
