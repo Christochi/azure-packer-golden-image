@@ -13,4 +13,6 @@ vault_bin_dest: /usr/local/bin/
 
 # vault settings
 vault_config_path: /etc/vault.d
+vault_config_name: vault.hcl.j2
+systemd_unit_directory: /lib/systemd/system
 
