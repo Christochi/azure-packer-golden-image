@@ -3,4 +3,3 @@
 
 - name: Call Task Vault
   import_tasks: vault.yml
-
