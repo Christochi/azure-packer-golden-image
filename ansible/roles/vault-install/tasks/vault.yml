@@ -1,4 +1,4 @@
-- name: Install Vault
+- name: Download Vault
   unarchive:
     remote_src: yes # archived file to unpack exists in target server
     src: "{{vault_bin_src}}"
