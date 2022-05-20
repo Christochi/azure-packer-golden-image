@@ -5,5 +5,5 @@
   roles:
     - rhel-packages
     - vault-install
+    - configure-vault
     - goss
-    
