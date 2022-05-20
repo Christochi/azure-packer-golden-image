@@ -1,7 +1,3 @@
-# linux user/group
-vault_user: vault
-vault_group: vault
-
 # hashicorp information
 hashi_releases_url: https://releases.hashicorp.com
 vault_version: 1.10.3
@@ -10,10 +6,3 @@ vault_package_name: vault_{{vault_version}}_linux_amd64.zip
 # vault binary location
 vault_bin_src: "{{hashi_releases_url}}/vault/{{vault_version}}/{{vault_package_name}}"
 vault_bin_dest: /usr/local/bin/
-
-# vault settings
-vault_config_path: /etc/vault.d
-vault_config_name: vault.hcl.j2
-systemd_unit_directory: /lib/systemd/system
-vault_user_shell: /bin/false
-
