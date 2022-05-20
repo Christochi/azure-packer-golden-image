@@ -1,0 +1,13 @@
+- name: Upload Goss Template
+  template:
+    src: goss.yml
+    dest: "{{goss_bin_dest}}/goss.yml"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    force: yes
+  register: goss
+
+- name: Confirm Destination of Goss File
+  debug:
+    msg: successfully uploaded
+  when: goss is succeeded
