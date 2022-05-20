@@ -4,5 +4,6 @@
 
   roles:
     - vault-install
+    - rhel-packages
     - goss
     
