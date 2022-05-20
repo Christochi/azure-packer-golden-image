@@ -11,7 +11,7 @@
     - curl
     - wget
     - sudo
-    - ufw
+    # - ufw
     update_cache: true
 
 - name: Update Packages
