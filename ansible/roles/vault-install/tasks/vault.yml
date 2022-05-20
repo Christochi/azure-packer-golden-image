@@ -5,6 +5,7 @@
     dest: "{{vault_bin_dest}}"
     owner: root
     group: root
+    mode: 0555
  
 - name: Create Vault User
   user:
