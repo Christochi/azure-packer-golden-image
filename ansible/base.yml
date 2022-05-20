@@ -7,3 +7,4 @@
     - vault-install
     - configure-vault
     - goss
+    - goss-test
