@@ -1,0 +1,21 @@
+- name: Install Dependencies
+  dnf:
+    name: "{{dependencies}}"
+    state: present
+  vars:  
+    dependencies:
+    - zip
+    - unzip
+    - gzip
+    - jq
+    - curl
+    - wget
+    - sudo
+    - ufw
+    update_cache: true
+
+- name: Update Packages
+  dnf:
+    name: "*"
+    state: latest
+    update_cache: true
