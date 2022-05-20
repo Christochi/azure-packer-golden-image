@@ -3,7 +3,7 @@
   become: yes
 
   roles:
-    - vault-install
     - rhel-packages
+    - vault-install
     - goss
     
