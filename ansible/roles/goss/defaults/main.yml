@@ -1,0 +1,3 @@
+# goss bin location
+goss_bin_src: https://github.com/aelsabbahy/goss/releases/latest/download/goss-linux-amd64
+goss_bin_dest: /usr/local/bin/

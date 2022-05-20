@@ -1,0 +1,14 @@
+- name: Download Goss
+  get_url:
+    url: "{{goss_bin_src}}"
+    dest: "{{goss_bin_dest}}"
+    owner: root
+    group: root
+    force: yes
+    mode: 0755
+  register: goss_install
+
+- name: Confirm Goss is Installed
+  debug:
+    msg: successfully installed
+  when: goss_install is downloaded
