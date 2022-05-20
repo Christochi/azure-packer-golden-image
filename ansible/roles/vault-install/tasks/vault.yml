@@ -10,7 +10,7 @@
   user:
     name: "{{vault_user}}"
     system: yes
-    shell: /bin/false # not a login account
+    shell: "{{vault_user_shell}}" # not a login account
     home: "{{vault_config_path}}"
     createhome: no
     append: yes
