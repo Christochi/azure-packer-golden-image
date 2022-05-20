@@ -11,4 +11,4 @@
 - name: Confirm Goss is Installed
   debug:
     msg: successfully installed
-  when: goss_install is downloaded
+  when: goss_install is succeeded
