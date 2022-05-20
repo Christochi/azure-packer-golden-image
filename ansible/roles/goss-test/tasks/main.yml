@@ -1,2 +1,3 @@
 - name: Goss Validate
-  cmd: goss --vars /etc/goss.d/goss.yml validate
+  command:
+    cmd: goss --vars /etc/goss.d/goss.yml validate
