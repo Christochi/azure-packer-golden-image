@@ -5,7 +5,7 @@
     owner: root
     group: root
     force: yes
-    mode: 0755
+    mode: 0555
   register: goss_install
 
 - name: Confirm Goss is Installed
