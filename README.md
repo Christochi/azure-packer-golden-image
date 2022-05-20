@@ -6,6 +6,7 @@ builds custom image using a base image from azure, downloads vault, goss uploads
 ## Requirement
 - install packer
 - working knowledge of ansible
+- working knowledge of [goss] (https://github.com/aelsabbahy/goss) for validating configuration 
 
 ## Setup
 - add the values for `client-id`, `client-secret`, `subscription-id`, `tenant-id`, `az_image_name`, `managed-image-rg-name`, in `variables.auto.pkrvars.hcl.example` file
