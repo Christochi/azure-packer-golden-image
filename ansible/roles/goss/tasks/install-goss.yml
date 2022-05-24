@@ -6,9 +6,9 @@
     group: root
     force: yes
     mode: 0555
-  register: goss_install
+  register: goss_download
 
-- name: Confirm Goss is Installed
+- name: Confirm Goss is Downloaded
   debug:
-    msg: successfully installed
-  when: goss_install is succeeded
+    msg: binary successfully downloaded
+  when: goss_download is succeeded
