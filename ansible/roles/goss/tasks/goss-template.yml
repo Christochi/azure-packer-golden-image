@@ -8,7 +8,7 @@
     recurse: true
   register: goss_dir
 
-- name: Confirm Creation of Doss Directory
+- name: Confirm Creation of Goss Directory
   debug:
     msg: successfully created
   when: goss_dir is succeeded
