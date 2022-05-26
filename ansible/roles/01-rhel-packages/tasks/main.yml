@@ -1,3 +1,13 @@
+- name: Import EPEL GPG key
+  rpm_key:
+    key: http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-8
+    state: present
+
+- name: Install EPEL 8
+  dnf:
+    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+    state: present
+
 - name: Install Dependencies
   dnf:
     name: "{{dependencies}}"
@@ -11,11 +21,11 @@
     - curl
     - wget
     - sudo
-    # - ufw
+    - ufw
     update_cache: true
 
-# - name: Update Packages
-#   dnf:
-#     name: "*"
-#     state: latest
-#     update_cache: true
+- name: Update Packages
+  dnf:
+    name: "*"
+    state: latest
+    update_cache: true
