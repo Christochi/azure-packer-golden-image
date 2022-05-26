@@ -1,0 +1,17 @@
+- name: Upload Vault Systemd Service File
+  template:
+    src: service/vault.service.j2
+    dest: "{{systemd_unit_directory}}/vault.service"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    force: yes
+  register: vault_service
+  notify:
+  - Enable Vault Service
+  - Populate Service Facts
+  - Print Vault Status
+
+- name: Confirm Destination of Systemd File
+  debug:
+    msg: successfully uploaded
+  when: vault_service is succeeded
