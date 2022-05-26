@@ -3,8 +3,8 @@
   become: yes
 
   roles:
-    - rhel-packages
-    - vault-install
-    - configure-vault
-    - goss
-    # - goss-test
+    - 01-rhel-packages
+    - 02-vault-install
+    - 03-configure-vault
+    - 04-goss
+    - 05-goss-test
