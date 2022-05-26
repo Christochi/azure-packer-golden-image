@@ -1,5 +1,0 @@
-- name: Call Task Install-Goss
-  import_tasks: install-goss.yml
-
-- name: Call Task Goss-Template
-  import_tasks: goss-template.yml
