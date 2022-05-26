@@ -3,3 +3,6 @@
 
 - name: Call Task Vault-Service
   import_tasks: vault-service.yml
+
+- name: Call Task UFW
+  import_tasks: ufw.yml
