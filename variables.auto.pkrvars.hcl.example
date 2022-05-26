@@ -1,5 +1,5 @@
 client-id             = ""
-client-secret         = ""
+client-secret         = ""  # client secret value
 subscription-id       = ""
 tenant-id             = ""
 img-publisher         = "Redhat"
@@ -8,5 +8,5 @@ img-sku               = "8.2"
 location              = "Canada Central" # location of Resource Groug (RG) to create VM
 os-type               = "Linux"
 az_image_name         = ""
-managed-image-rg-name = ""
+managed-image-rg-name = "" # name of RG to store image
 playbook-dir          = "ansible/base.yml"
