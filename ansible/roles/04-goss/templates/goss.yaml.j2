@@ -1,0 +1,22 @@
+user:
+  vault:
+    exists: true
+    home: "{{vault_config_path}}"
+    shell: "{{vault_user_shell}}"
+
+group:
+  vault:
+    exists: true
+
+file:
+  "{{vault_bin_dest}}/vault":
+    exists: true
+    mode: 0555
+    owner: root
+    group: root
+    filetype: file
+
+service:
+  vault:
+    enabled: true
+    running: false
