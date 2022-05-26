@@ -21,7 +21,7 @@ az_image_name         = "your-custom-image-name"
 managed-image-rg-name = "your-resource-group" # not parker created
 ~~~
 
-- you can also change the `location`, `img-publisher`, `img-offer`, `img-sku`, `os-type` in the `variables.auto.pkrvars.hcl` **(optional)**
+- you can also change the `location`, `img-publisher`, `img-offer`, `img-sku`, `os-type` in the `variables.auto.pkrvars.hcl.example` **(optional)**
 
 #### Usage Example
 ~~~
@@ -37,3 +37,5 @@ os-type               = "Linux"
 - run `packer fmt .` for formatting code **(optional)**
 - run `packer validate .` for ensuring no syntax error **(optional)**
 - run `packer build .` for building the image
+
+## Internals
