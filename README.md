@@ -39,3 +39,4 @@ os-type               = "Linux"
 - run `packer build .` for building the image
 
 ## Internals
+information about the ansible provisoner, go to ansible [readme](ansible/README.md)
