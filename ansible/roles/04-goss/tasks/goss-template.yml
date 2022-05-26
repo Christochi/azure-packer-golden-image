@@ -22,7 +22,7 @@
     force: yes
   register: goss_temp
 
-- name: Confirm Destination of Goss File
+- name: Confirm Destination of Goss Template
   debug:
     msg: successfully uploaded
   when: goss_temp is succeeded
