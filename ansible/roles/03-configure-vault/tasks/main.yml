@@ -1,26 +1,5 @@
-- name: Create Vault User
-  user:
-    name: "{{vault_user}}"
-    system: yes
-    shell: "{{vault_user_shell}}" # not a login account
-    home: "{{vault_config_path}}"
-    createhome: no
-    append: yes
+- name: Call Task Vault-User
+  import_tasks: vault-user.yml
 
-- name: Upload Vault Systemd Service File
-  template:
-    src: vault.service.j2
-    dest: "{{systemd_unit_directory}}/vault.service"
-    owner: "{{vault_user}}"
-    group: "{{vault_group}}"
-    force: yes
-  register: vault_service
-  notify:
-  - Enable Vault Service
-  - Populate Service Facts
-  - Print Vault Status
-
-- name: Confirm Destination of Systemd File
-  debug:
-    msg: successfully uploaded
-  when: vault_service is succeeded
+- name: Call Task Vault-Service
+  import_tasks: vault-service.yml
