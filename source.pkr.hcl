@@ -1,4 +1,4 @@
-# local variable for storing name of the base image with time stamp 
+# local variable stores name of the base image with time stamp 
 locals {
 
   az_image = "${var.az_image_name}-${formatdate("DD-MMM-YYYY-ss-mm-hh", timestamp())}"
