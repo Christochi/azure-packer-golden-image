@@ -1,7 +1,7 @@
 # Azure Packer Image
 
 ## Description
-builds custom image using a base image from azure, downloads vault, goss uploads the files and installs necessary applications in the custom image
+builds custom image using a base image from azure, downloads vault, goss, uploads the files and installs necessary applications in the custom image
 
 ## Requirement
 - install packer
