@@ -6,11 +6,7 @@
     group: "{{vault_group}}"
     force: yes
   register: vault_service
-  notify:
-  - Enable Vault Service
-  - Populate Service Facts
-  - Print Vault Status
-
+  
 - name: Confirm Destination of Systemd File
   debug:
     msg: successfully uploaded
