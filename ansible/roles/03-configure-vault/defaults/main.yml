@@ -5,6 +5,7 @@ vault_group: vault
 # vault settings
 vault_config_path: /etc/vault.d
 vault_config_name: vault.hcl.j2
+vault_bin_dest: /usr/local/bin/
 systemd_unit_directory: /lib/systemd/system
 vault_user_shell: /bin/false
 vault_api_port: 8200
