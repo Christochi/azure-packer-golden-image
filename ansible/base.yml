@@ -5,6 +5,6 @@
   roles:
     - 01-rhel-packages
     - 02-vault-install
-    - 03-configure-vault
-    - 04-goss
-    - 05-goss-test
+    - 03-firewall-rule
+    - 04-configure-vault
+    - 05-goss
