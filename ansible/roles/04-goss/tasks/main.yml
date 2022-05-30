@@ -3,3 +3,6 @@
 
 - name: Call Task Goss-Template
   import_tasks: goss-template.yml
+
+- name: Call Task Goss-Test
+  import_tasks: goss-test.yml
