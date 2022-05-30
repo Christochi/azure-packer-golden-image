@@ -23,9 +23,3 @@
     - sudo
     - ufw
     update_cache: true
-
-- name: Update Packages
-  dnf:
-    name: "*"
-    state: latest
-    update_cache: true
