@@ -12,4 +12,3 @@ The ansible roles are called in the following order:
 - **02-vault-install:** downloads vault binary
 - **03-configure-vault:** configures vault as a service
 - **04-goss:** downloads goss binary for testing of server configuration
-- **05-goss-test:** runs test script for validating configuraton
