@@ -1,6 +1,6 @@
 - name: "upload vault ufw config file"
   template:                                                                                                               
-    src: ufw/ports.j2                          
+    src: ufw/vault.j2                          
     dest: /etc/ufw/applications.d/vault                                                                     
     decrypt: yes
     force: yes
@@ -12,10 +12,7 @@
   command: "ufw default allow outgoing" 
 
 - name: "open ssh port"               
-  command: "ufw allow 22/tcp"    
-
-- name: "open DNS port"              
-  command: "ufw allow 53"  
+  command: "ufw allow 'ssh'"    
 
 - name: "enabling ufw rule"
   command: "ufw allow 'vault'"
