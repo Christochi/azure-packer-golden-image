@@ -1,0 +1,24 @@
+- name: "upload vault ufw config file"
+  template:                                                                                                               
+    src: ufw/vault.j2                          
+    dest: /etc/ufw/applications.d/vault                                                                     
+    decrypt: yes
+    force: yes
+            
+- name: "set default ufw policy to DENY"  
+  command: "ufw default deny"     
+
+- name: "allow outgoing connection"       
+  command: "ufw default allow outgoing" 
+
+- name: "open ssh port"               
+  command: "ufw allow 'ssh'"    
+
+- name: "enabling ufw rule"
+  command: "ufw allow 'vault'"
+
+- name: "ensure ufw is enabled"  
+  command: "ufw --force enable"
+
+- name: "reload ufw"                                                             
+  command: "ufw reload"
