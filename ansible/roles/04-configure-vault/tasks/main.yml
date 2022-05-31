@@ -1,5 +1,0 @@
-- name: Call Task Vault-User
-  import_tasks: vault-user.yml
-
-- name: Call Task Vault-Service
-  import_tasks: vault-service.yml
