@@ -1,0 +1,10 @@
+# Installation steps
+- hosts: all
+  become: true
+
+  roles:
+    - rhel-packages
+    - vault-install
+    - firewall-rule
+    - configure-vault
+    - goss
