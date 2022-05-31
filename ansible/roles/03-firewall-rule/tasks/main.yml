@@ -12,7 +12,13 @@
   command: "ufw default allow outgoing" 
 
 - name: "open ssh port"               
-  command: "ufw allow 'ssh'"    
+  command: "ufw allow 'ssh'" 
+
+- name: "open vault api port"               
+  command: "ufw allow 8200"   
+
+- name: "open vault cluster port"               
+  command: "ufw allow 8201"    
 
 - name: "enabling ufw rule"
   command: "ufw allow 'vault'"
