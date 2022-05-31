@@ -4,7 +4,7 @@
 Packer ansible Provisioner installs and configures vault, and other dependencies
 
 ## Playbook Structure
-- **base.yml**
+- **site.yml**
 - **roles**
 
 The ansible roles are called in the following order:
