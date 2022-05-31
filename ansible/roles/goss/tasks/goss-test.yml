@@ -1,0 +1,8 @@
+- name: Goss Validate
+  command:
+    cmd: /usr/local/bin/goss --gossfile /etc/goss.d/goss.yaml validate -f documentation
+  register: output
+
+- name: Prints Test Result on Stdout
+  debug:
+    var: output.stdout_lines

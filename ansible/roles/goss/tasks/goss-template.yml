@@ -1,0 +1,28 @@
+- name: Create Directory for Goss Template 
+  file:
+    path: "{{goss_path}}"
+    state: directory
+    owner: root
+    group: root
+    mode: '0770'
+    recurse: true
+  register: goss_dir
+
+- name: Confirm Creation of Goss Directory
+  debug:
+    msg: successfully created
+  when: goss_dir is succeeded
+
+- name: Upload Goss Template
+  template:
+    src: goss.yaml.j2
+    dest: "{{goss_path}}/goss.yaml"
+    owner: root
+    group: root
+    force: yes
+  register: goss_temp
+
+- name: Confirm Destination of Goss Template
+  debug:
+    msg: successfully uploaded
+  when: goss_temp is succeeded
