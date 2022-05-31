@@ -9,4 +9,4 @@ location              = "Canada Central" # location of Resource Groug (RG) to cr
 os-type               = "Linux"
 az_image_name         = ""
 managed-image-rg-name = "" # name of RG to store image
-playbook-dir          = "ansible/base.yml"
+playbook-dir          = "ansible/site.yml"
