@@ -1,7 +1,7 @@
 - name: Download Goss
   get_url:
-    url: "{{goss_bin_src}}"
-    dest: "{{goss_bin_dest}}"
+    url: "{{ goss_bin_src }}"
+    dest: "{{ goss_bin_dest }}"
     owner: root
     group: root
     force: yes
