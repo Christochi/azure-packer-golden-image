@@ -5,7 +5,7 @@
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
     mode: 0777
-    force: yes
+    force: true
   register: vault_service
   
 - name: Confirm Destination of Systemd File
@@ -18,4 +18,3 @@
     name: vault
     state: stopped
     enabled: yes
-  when: vault_service is changed
