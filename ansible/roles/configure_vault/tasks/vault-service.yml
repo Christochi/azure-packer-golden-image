@@ -17,4 +17,4 @@
   service:
     name: vault
     state: stopped
-    enabled: yes
+    enabled: true
