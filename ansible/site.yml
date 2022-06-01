@@ -3,7 +3,7 @@
   become: true
 
   roles:
-    - rhel-packages
+    - rhel_packages
     - vault-install
     - firewall_rule
     - configure_vault
