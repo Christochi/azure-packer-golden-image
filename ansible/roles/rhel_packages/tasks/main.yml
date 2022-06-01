@@ -14,12 +14,12 @@
     state: present
   vars:  
     dependencies:
-    - zip
-    - unzip
-    - gzip
-    - jq
-    - curl
-    - wget
-    - sudo
-    - ufw
+      - zip
+      - unzip
+      - gzip
+      - jq
+      - curl
+      - wget
+      - sudo
+      - ufw
     update_cache: true
