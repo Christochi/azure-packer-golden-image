@@ -5,6 +5,6 @@
   roles:
     - rhel-packages
     - vault-install
-    - firewall-rule
+    - firewall_rule
     - configure_vault
     - goss
