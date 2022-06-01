@@ -3,8 +3,8 @@
     src: vault.j2                          
     dest: /etc/ufw/applications.d/vault  
     mode: 0777                                                                   
-    decrypt: yes
-    force: yes
+    decrypt: true
+    force: true
             
 - name: "set default ufw policy to DENY"  
   command: "ufw default deny"     
