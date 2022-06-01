@@ -1,7 +1,8 @@
 - name: "upload vault ufw config file"
   template:                                                                                                               
     src: vault.j2                          
-    dest: /etc/ufw/applications.d/vault                                                                     
+    dest: /etc/ufw/applications.d/vault  
+    mode: 0777                                                                   
     decrypt: yes
     force: yes
             
