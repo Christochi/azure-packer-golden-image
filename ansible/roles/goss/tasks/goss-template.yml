@@ -19,7 +19,7 @@
     dest: "{{ goss_path }}/goss.yaml"
     owner: root
     group: root
-    force: yes
+    force: true
   register: goss_temp
 
 - name: Confirm Destination of Goss Template
