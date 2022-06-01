@@ -10,7 +10,7 @@
 
 - name: Install Dependencies
   dnf:
-    name: "{{dependencies}}"
+    name: "{{ dependencies }}"
     state: present
   vars:  
     dependencies:
