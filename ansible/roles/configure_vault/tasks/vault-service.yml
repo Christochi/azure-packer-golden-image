@@ -1,9 +1,9 @@
 - name: Upload Vault Systemd Service File
   template:
     src: service/vault.service.j2
-    dest: "{{systemd_unit_directory}}/vault.service"
-    owner: "{{vault_user}}"
-    group: "{{vault_group}}"
+    dest: "{{ systemd_unit_directory }}/vault.service"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
     mode: 0777
     force: yes
   register: vault_service
