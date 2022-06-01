@@ -1,6 +1,6 @@
 - name: Create Directory for Goss Template 
   file:
-    path: "{{goss_path}}"
+    path: "{{ goss_path }}"
     state: directory
     owner: root
     group: root
@@ -16,7 +16,7 @@
 - name: Upload Goss Template
   template:
     src: goss.yaml.j2
-    dest: "{{goss_path}}/goss.yaml"
+    dest: "{{ goss_path }}/goss.yaml"
     owner: root
     group: root
     force: yes
