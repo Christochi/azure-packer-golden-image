@@ -19,6 +19,7 @@
     dest: "{{ goss_path }}/goss.yaml"
     owner: root
     group: root
+    mode: 0777
     force: true
   register: goss_temp
 
