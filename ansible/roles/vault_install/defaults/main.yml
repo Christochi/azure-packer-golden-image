@@ -1,8 +1,8 @@
 # hashicorp information
 hashi_releases_url: https://releases.hashicorp.com
 vault_version: 1.10.3
-vault_package_name: vault_{{vault_version}}_linux_amd64.zip
+vault_package_name: vault_{{ vault_version }}_linux_amd64.zip
 
 # vault binary location
-vault_bin_src: "{{hashi_releases_url}}/vault/{{vault_version}}/{{vault_package_name}}"
+vault_bin_src: "{{ hashi_releases_url }}/vault/{{ vault_version }}/{{ vault_package_name }}"
 vault_bin_dest: /usr/local/bin/
