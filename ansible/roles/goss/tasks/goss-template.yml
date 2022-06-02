@@ -1,4 +1,4 @@
-- name: Create Directory for Goss Template 
+- name: Create Directory for Goss Template
   file:
     path: "{{ goss_path }}"
     state: directory
