@@ -1,11 +1,11 @@
 - name: "upload vault ufw config file"
-  template:                                                                                                               
-    src: vault.j2                          
-    dest: /etc/ufw/applications.d/vault  
-    mode: 0777                                                                   
+  template:                                                                                    
+    src: vault.j2       
+    dest: /etc/ufw/applications.d/vault 
+    mode: 0777                                          
     decrypt: true
     force: true
-            
+
 - name: "set default ufw policy to DENY"  
   command: "ufw default deny"     
 
