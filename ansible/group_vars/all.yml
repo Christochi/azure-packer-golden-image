@@ -1,0 +1,4 @@
+# vault settings
+vault_config_path: /etc/vault.d
+vault_bin_dest: /usr/local/bin/
+vault_user_shell: /bin/false
