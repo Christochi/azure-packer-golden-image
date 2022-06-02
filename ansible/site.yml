@@ -4,7 +4,7 @@
 
   roles:
     - rhel_packages
-    - vault-install
+    - vault_install
     - firewall_rule
     - configure_vault
     - goss
