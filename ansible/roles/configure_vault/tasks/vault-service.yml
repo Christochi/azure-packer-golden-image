@@ -7,7 +7,7 @@
     mode: 0777
     force: true
   register: vault_service
-  
+
 - name: Confirm Destination of Systemd File
   debug:
     msg: successfully uploaded
