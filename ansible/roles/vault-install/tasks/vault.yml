@@ -1,8 +1,0 @@
-- name: Download Vault
-  unarchive:
-    remote_src: yes # archived file to unpack will exists in target server
-    src: "{{vault_bin_src}}"
-    dest: "{{vault_bin_dest}}"
-    owner: root
-    group: root
-    mode: 0555
