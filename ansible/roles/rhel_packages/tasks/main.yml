@@ -12,7 +12,7 @@
   dnf:
     name: "{{ dependencies }}"
     state: present
-  vars:  
+  vars:
     dependencies:
       - zip
       - unzip
