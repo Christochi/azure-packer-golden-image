@@ -4,10 +4,3 @@ goss_bin_dest: /usr/local/bin/goss
 
 # goss file location
 goss_path: /etc/goss.d
-
-# vault settings
-# vault_config_path: /etc/vault.d
-# vault_user_shell: /bin/false
-
-# vault binary location
-# vault_bin_dest: /usr/local/bin/
