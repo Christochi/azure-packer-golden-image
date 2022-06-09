@@ -9,8 +9,8 @@ StartLimitIntervalSec=60
 StartLimitBurst=3
 
 [Service]
-User=vault
-Group=vault
+User={{vault_user}}
+Group={{vault_group}}
 LogLevel=info
 ProtectSystem=full
 ProtectHome=read-only
