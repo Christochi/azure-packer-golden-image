@@ -2,8 +2,8 @@
   file:
     path: "{{ vault_config_path }}"
     state: directory
-    owner: root
-    group: root
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
     mode: 0777
     recurse: true
   register: config_dir
