@@ -1,0 +1,44 @@
+- name: Upload Vault Seal Template
+  template:
+    src: config/seal.hcl.tmpl.j2
+    dest: "{{ vault_config_path }}/seal.hcl.tmpl"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0777
+    force: true
+  register: vault_seal
+
+- name: Confirm Destination of Vault Seal Template
+  debug:
+    msg: successfully uploaded
+  when: vault_seal is succeeded
+
+- name: Upload Vault Raft Storage Template
+  template:
+    src: config/raft.hcl.tmpl.j2
+    dest: "{{ vault_config_path }}/raft.hcl.tmpl"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0777
+    force: true
+  register: vault_raft
+
+- name: Confirm Destination of Vault Raft Storage Template
+  debug:
+    msg: successfully uploaded
+  when: vault_raft is succeeded
+
+- name: Upload Vault Config-Root Template
+  template:
+    src: config/config-root.hcl.tmpl.j2
+    dest: "{{ vault_config_path }}/config-root.hcl.tmpl"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0777
+    force: true
+  register: vault_config_root
+
+- name: Confirm Destination of Vault Config-Root Template
+  debug:
+    msg: successfully uploaded
+  when: vault_config_root is succeeded
