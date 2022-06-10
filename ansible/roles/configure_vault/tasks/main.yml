@@ -1,8 +1,8 @@
 - name: Call Task Vault-User
   import_tasks: vault-user.yml
 
-- name: Call Task Vault-Configs
-  import_tasks: vault-configs.yml
+- name: Call Task Vault-Stat-Config
+  import_tasks: vault-stat-config.yml
 
 - name: Call Task Raft-Data
   import_tasks: raft-data.yml
