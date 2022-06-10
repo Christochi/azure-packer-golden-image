@@ -21,6 +21,12 @@ file:
     owner: "{{vault_user}}"
     group: "{{vault_group}}"
     filetype: directory
+  "{{vault_config_path}}/tls":
+    exists: true
+    mode: "0777"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    filetype: directory
 
 service:
   vault:
