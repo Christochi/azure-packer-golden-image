@@ -4,3 +4,10 @@ goss_bin_dest: /usr/local/bin/goss
 
 # goss file location
 goss_path: /etc/goss.d
+
+# linux user/group
+vault_user: vault
+vault_group: vault
+
+# vault settings
+vault_data_path: /var/vault/data
