@@ -1,0 +1,14 @@
+- name: Create Directory for Vault Server TLS Certificates
+  file:
+    path: "{{ vault_config_path }}/tls"
+    state: directory
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0777
+    recurse: true
+  register: tls_certs
+
+- name: Confirm Creation of Vault Server TLS Certificates
+  debug:
+    msg: successfully created
+  when: tls_certs is succeeded
