@@ -1,0 +1,14 @@
+- name: Create Directory for Raft Storage Data 
+  file:
+    path: "{{ vault_data_path }}"
+    state: directory
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0777
+    recurse: true
+  register: raft_data
+
+- name: Confirm Creation of Raft Storage Data File
+  debug:
+    msg: successfully created
+  when: raft_data is succeeded
