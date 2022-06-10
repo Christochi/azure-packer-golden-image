@@ -4,6 +4,9 @@
 - name: Call Task Vault-Stat-Config
   import_tasks: vault-stat-config.yml
 
+- name: Call Task Vault-Tmpl-Config
+  import_tasks: vault-tmpl-config.yml
+
 - name: Call Task Raft-Data
   import_tasks: raft-data.yml
 
