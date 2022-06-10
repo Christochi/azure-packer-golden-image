@@ -45,6 +45,24 @@ file:
     owner: "{{vault_user}}"
     group: "{{vault_group}}"
     filetype: file
+  "{{tmpl_vault_config_path}}/seal.hcl.tmpl":
+    exists: true
+    mode: "0777"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    filetype: file
+  "{{tmpl_vault_config_path}}/raft.hcl.tmpl":
+    exists: true
+    mode: "0777"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    filetype: file
+  "{{tmpl_vault_config_path}}/config-root.hcl.tmpl":
+    exists: true
+    mode: "0777"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    filetype: file
 
 service:
   vault:
