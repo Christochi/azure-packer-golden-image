@@ -27,6 +27,24 @@ file:
     owner: "{{vault_user}}"
     group: "{{vault_group}}"
     filetype: directory
+  "{{vault_config_path}}/listener.hcl":
+    exists: true
+    mode: "0777"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    filetype: file
+  "{{vault_config_path}}/replication.hcl":
+    exists: true
+    mode: "0777"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    filetype: file
+  "{{vault_config_path}}/telemetry.hcl":
+    exists: true
+    mode: "0777"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    filetype: file
 
 service:
   vault:
