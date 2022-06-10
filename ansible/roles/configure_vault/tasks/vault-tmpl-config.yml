@@ -1,7 +1,22 @@
+- name: Create Directory for Vault Config Templates
+  file:
+    path: "{{ tmpl_vault_config_path }}"
+    state: directory
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0777
+    recurse: true
+  register: config_dir
+
+- name: Confirm Creation of Vault Config Directory
+  debug:
+    msg: successfully created
+  when: config_dir is succeeded
+
 - name: Upload Vault Seal Template
   template:
     src: config/seal.hcl.tmpl.j2
-    dest: "{{ vault_config_path }}/seal.hcl.tmpl"
+    dest: "{{ tmpl_vault_config_path }}/seal.hcl.tmpl"
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
     mode: 0777
@@ -16,7 +31,7 @@
 - name: Upload Vault Raft Storage Template
   template:
     src: config/raft.hcl.tmpl.j2
-    dest: "{{ vault_config_path }}/raft.hcl.tmpl"
+    dest: "{{ tmpl_vault_config_path }}/raft.hcl.tmpl"
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
     mode: 0777
@@ -31,7 +46,7 @@
 - name: Upload Vault Config-Root Template
   template:
     src: config/config-root.hcl.tmpl.j2
-    dest: "{{ vault_config_path }}/config-root.hcl.tmpl"
+    dest: "{{ tmpl_vault_config_path }}/config-root.hcl.tmpl"
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
     mode: 0777
