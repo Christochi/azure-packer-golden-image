@@ -1,0 +1,14 @@
+- name: Upload Vault Config Templates
+  template:
+    src: config/*
+    dest: "{{ vault_config_path }}/"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0777
+    force: true
+  register: vault_configs
+
+- name: Confirm Destination of Vault Config Templates
+  debug:
+    msg: successfully uploaded
+  when: vault_configs is succeeded
