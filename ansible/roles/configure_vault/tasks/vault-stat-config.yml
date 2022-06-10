@@ -1,0 +1,59 @@
+- name: Create Directory for Vault Config Templates
+  file:
+    path: "{{ vault_config_path }}"
+    state: directory
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0777
+    recurse: true
+  register: config_dir
+
+- name: Confirm Creation of Vault Config Directory
+  debug:
+    msg: successfully created
+  when: config_dir is succeeded
+
+- name: Upload Vault Listener Template
+  template:
+    src: config/listener.hcl.j2
+    dest: "{{ vault_config_path }}/listener.hcl"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0777
+    force: true
+  register: vault_listener
+
+- name: Confirm Destination of Vault Listener Template
+  debug:
+    msg: successfully uploaded
+  when: vault_listener is succeeded
+
+- name: Upload Vault Replication Template
+  template:
+    src: config/replication.hcl.j2
+    dest: "{{ vault_config_path }}/replication.hcl"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0777
+    force: true
+  register: vault_replication
+
+- name: Confirm Destination of Vault Replication Template
+  debug:
+    msg: successfully uploaded
+  when: vault_replication is succeeded
+
+- name: Upload Vault Telemetry Template
+  template:
+    src: config/telemetry.hcl.j2
+    dest: "{{ vault_config_path }}/telemetry.hcl"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0777
+    force: true
+  register: vault_telemetry
+
+- name: Confirm Destination of Vault Telemetry Template
+  debug:
+    msg: successfully uploaded
+  when: vault_telemetry is succeeded
