@@ -4,5 +4,8 @@
 - name: Call Task Raft-Data
   import_tasks: raft-data.yml
 
+- name: Call Task TLS-Certs
+  import_tasks: tls-certs.yml
+
 - name: Call Task Vault-Service
   import_tasks: vault-service.yml
