@@ -4,7 +4,7 @@
     state: directory
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
-    mode: 0777
+    mode: 0700
     recurse: true
   register: config_dir
 
@@ -19,7 +19,7 @@
     dest: "{{ vault_config_path }}/listener.hcl"
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
-    mode: 0777
+    mode: 0700
     force: true
   register: vault_listener
 
@@ -34,7 +34,7 @@
     dest: "{{ vault_config_path }}/replication.hcl"
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
-    mode: 0777
+    mode: 0700
     force: true
   register: vault_replication
 
@@ -49,7 +49,7 @@
     dest: "{{ vault_config_path }}/telemetry.hcl"
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
-    mode: 0777
+    mode: 0700
     force: true
   register: vault_telemetry
 
