@@ -1,3 +1,7 @@
+# linux user/group
+vault_user: vault
+vault_group: vault
+
 # vault settings
 vault_config_path: /etc/vault.d
 vault_bin_dest: /usr/local/bin/
