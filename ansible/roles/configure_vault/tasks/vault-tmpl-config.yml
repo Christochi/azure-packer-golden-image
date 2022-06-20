@@ -4,7 +4,7 @@
     state: directory
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
-    mode: 0777
+    mode: 0700
     recurse: true
   register: config_dir
 
@@ -19,7 +19,7 @@
     dest: "{{ tmpl_vault_config_path }}/seal.hcl.tmpl"
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
-    mode: 0777
+    mode: 0700
     force: true
   register: vault_seal
 
@@ -34,7 +34,7 @@
     dest: "{{ tmpl_vault_config_path }}/raft.hcl.tmpl"
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
-    mode: 0777
+    mode: 0700
     force: true
   register: vault_raft
 
@@ -49,7 +49,7 @@
     dest: "{{ tmpl_vault_config_path }}/config-root.hcl.tmpl"
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
-    mode: 0777
+    mode: 0700
     force: true
   register: vault_config_root
 
