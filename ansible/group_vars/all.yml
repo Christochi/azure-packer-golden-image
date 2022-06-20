@@ -2,6 +2,10 @@
 vault_user: vault
 vault_group: vault
 
+# vault tcp settings
+vault_api_port: 8200
+vault_cluster_port: 8201
+
 # vault settings
 vault_config_path: /etc/vault.d
 vault_bin_dest: /usr/local/bin/
