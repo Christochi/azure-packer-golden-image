@@ -1,6 +1,6 @@
 listener "tcp" {
-    address = "127.0.0.1:{{ vault_api_port }}"
-    cluster_address = "127.0.0.1:{{ vault_cluster_port }}"
+    address = "0.0.0.0:{{ vault_api_port }}"
+    cluster_address = "0.0.0.0:{{ vault_cluster_port }}"
     tls_disable = false
     tls_cert_file = "{{ vault_config_path }}/tls/cert.pem"
     tls_key_file = "{{ vault_config_path }}/tls/key.pem"
