@@ -9,7 +9,7 @@
     enabled: true
 
 - name: Install Package
-  yum:
+  dnf:
     name: azure-cli
     state: present
     update_cache: true
