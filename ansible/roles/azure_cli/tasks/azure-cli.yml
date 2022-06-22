@@ -10,7 +10,7 @@
 
 - name: Install Azure CLI
   dnf:
-    name: azure-cli
+    name: "{{ azure_repo_name }}"
     state: present
     update_cache: true
   register: az_cli_install
