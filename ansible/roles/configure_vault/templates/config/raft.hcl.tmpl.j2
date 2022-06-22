@@ -3,4 +3,5 @@ storage "raft" {
     # file system path where all the Vault data gets stored
     path = "{{ vault_data_path }}"
 
+    node_id = "${raft_node_1}" # node identifier
 }
