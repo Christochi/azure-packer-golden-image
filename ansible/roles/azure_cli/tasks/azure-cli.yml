@@ -5,7 +5,7 @@
     file: "{{ azure_repo_name }}" # File name without the .repo extension to save the repo in. Defaults to the value of name
     baseurl: "{{ azure_repo_url }}"
     gpgcheck: true
-    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    gpgkey: "{{ gpgkey_url }}"
     enabled: true
 
 - name: Install Azure CLI
