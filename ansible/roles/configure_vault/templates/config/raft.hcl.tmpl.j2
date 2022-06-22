@@ -4,4 +4,17 @@ storage "raft" {
     path = "{{ vault_data_path }}"
 
     node_id = "${raft_node_1}" # node identifier
+
+    retry_join {
+        leader_api_addr = ":8200"
+        leader_tls_servername = "${LEADER_TLS_SERVERNAME}"
+        leader_ca_cert_file = "{{ vault_config_path }}/tls/ca.pem"
+        leader_client_cert_file = "{{ vault_config_path }}/tls/cert.pem"
+        leader_client_key_file = "{{ vault_config_path }}/tls/key.pem"
+    }
+
+    retry_join {
+        auto_join_scheme = "https"
+        auto_join = "provider=azure subscription_id=${SUBSCRIPTION_ID} resource_group=${RESOURCE_GROUP_NAME} vm_scale_set=${VM_SCALE_SET_NAME}"
+    }
 }
