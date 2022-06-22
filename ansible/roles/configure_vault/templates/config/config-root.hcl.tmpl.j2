@@ -1,3 +1,6 @@
 ui = true
 api_addr  = "https://${local_ipv4}:{{ vault_api_port }}"
+
+# required when using the Integrated Storage backend to communicate 
+# between nodes in the raft cluster
 cluster_addr = "https://${local_ipv4}:{{ vault_cluster_port }}"
