@@ -1,1 +1,1 @@
-
+vault_firewall_rule: /etc/ufw/applications.d/vault
