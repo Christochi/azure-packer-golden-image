@@ -1,22 +1,2 @@
-- name: "upload vault ufw config file"
-  template:
-    src: vault.j2
-    dest: /etc/ufw/applications.d/vault
-    mode: 0777
-    decrypt: true
-    force: true
-
-- name: "set default ufw policy to DENY"
-  command: "ufw default deny"
-
-- name: "allow outgoing connection"
-  command: "ufw default allow outgoing"
-
-- name: "open ssh port"
-  command: "ufw allow 'ssh'"
-
-- name: "enabling ufw rule"
-  command: "ufw allow 'vault'"
-
-- name: "ensure ufw is enabled"
-  command: "ufw --force enable"
+- name: Call Task Firewall
+  import_tasks: firewall.yml
