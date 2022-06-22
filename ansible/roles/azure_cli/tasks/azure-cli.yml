@@ -1,4 +1,4 @@
-- name: Install Azure CLI
+- name: Install Azure Package
   yum_repository:
     name: packages-microsoft-com-prod
     description: Packages-Microsoft-Com-Prod forRHEL 8 or CentOS Stream 8
@@ -8,7 +8,7 @@
     gpgkey: https://packages.microsoft.com/keys/microsoft.asc
     enabled: true
 
-- name: Install Package
+- name: Install Azure CLI
   dnf:
     name: azure-cli
     state: present
