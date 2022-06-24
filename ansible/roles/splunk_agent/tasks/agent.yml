@@ -1,6 +1,6 @@
 - name: Copy Journald Input
   copy:
-    src: /Users/christochi/DOU/packer/azure-packer-image/ansible/roles/splunk_agent/files/
+    src: ~/DOU/packer/azure-packer-image/ansible/roles/splunk_agent/files/
     dest: "{{ vault_config_path }}/splunk/"
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
