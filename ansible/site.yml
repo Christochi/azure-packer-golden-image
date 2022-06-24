@@ -9,3 +9,4 @@
     - firewall_rule
     - configure_vault
     - goss
+    - splunk_agent
