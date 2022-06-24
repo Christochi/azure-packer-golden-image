@@ -14,3 +14,4 @@ The ansible roles are called in the following order:
 - **firewall_rule:** installs ufw, configures ufw and vault ports
 - **configure_vault:** configures vault for production
 - **goss:** downloads goss binary and runs script for testing of server configuration
+- **splunk_agent:** splunk configuration to read logs from journald
