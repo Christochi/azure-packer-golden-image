@@ -1,0 +1,13 @@
+- name: Copy Journald Input
+  copy:
+    src: /Users/christochi/DOU/packer/azure-packer-image/ansible/roles/splunk_agent/files/
+    dest: "{{ vault_config_path }}/splunk/"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0700
+  register: splunk_agent
+
+- name: Confirm input.conf was copied to /etc/vault.d/splunk/
+  debug:
+    msg: successfully created
+  when: splunk_agent is succeeded
