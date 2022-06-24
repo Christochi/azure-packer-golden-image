@@ -1,0 +1,7 @@
+[journald://vault]
+# The following fields are included by default, and required: MESSAGE, _REALTIME_TIMESTAMP, _CURSOR
+# journalctl-include-fields = PRIORITY,CMD,EXE
+# journalctl-exclude-fields =
+journalctl-filter =_SYSTEMD_UNIT=vault
+# journalctl-grep =^WARN.*disk,.*errno=\d+\S+restarting
+# journalctl-user-unit =unit1,unit2
