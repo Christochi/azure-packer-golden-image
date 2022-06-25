@@ -8,5 +8,5 @@
     - vault_install
     - firewall_rule
     - configure_vault
-    - goss
     - splunk_agent
+    - goss
