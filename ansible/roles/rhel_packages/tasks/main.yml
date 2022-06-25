@@ -1,25 +1,5 @@
-- name: Import EPEL GPG key
-  rpm_key:
-    key: http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-8
-    state: present
+- name: Call Task Azure-CLI
+  import_tasks: azure-cli.yml
 
-- name: Install EPEL 8
-  dnf:
-    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-    state: present
-
-- name: Install Dependencies
-  dnf:
-    name: "{{ dependencies }}"
-    state: present
-  vars:
-    dependencies:
-      - zip
-      - unzip
-      - gzip
-      - jq
-      - curl
-      - wget
-      - sudo
-      - ufw
-    update_cache: true
+- name: Call Task Packages
+  import_tasks: packages.yml
