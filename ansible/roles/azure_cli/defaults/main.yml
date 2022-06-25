@@ -1,4 +1,0 @@
-azure_package_name: packages-microsoft-com-prod
-azure_repo_name: azure-cli
-azure_repo_url: https://packages.microsoft.com/rhel/8/prod
-gpgkey_url: https://packages.microsoft.com/keys/microsoft.asc
