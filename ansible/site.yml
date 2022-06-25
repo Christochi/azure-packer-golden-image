@@ -3,7 +3,6 @@
   become: true
 
   roles:
-    - azure_cli
     - rhel_packages
     - vault_install
     - firewall_rule
