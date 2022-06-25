@@ -1,2 +1,0 @@
-- name: Call Task Azure-CLI
-  import_tasks: azure-cli.yml
