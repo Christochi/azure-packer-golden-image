@@ -63,6 +63,12 @@ file:
     owner: "{{vault_user}}"
     group: "{{vault_group}}"
     filetype: file
+  "{{vault_config_path}}/splunk/inputs.conf":
+    exists: true
+    mode: "0700"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    filetype: file
 
 service:
   vault:
