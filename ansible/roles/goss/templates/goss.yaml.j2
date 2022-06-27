@@ -69,6 +69,24 @@ file:
     owner: "{{vault_user}}"
     group: "{{vault_group}}"
     filetype: file
+  "{{vault_bin_dest}}vault-dr-cluster-setup.sh":
+    exists: true
+    mode: "0700"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    filetype: file
+  "{{vault_bin_dest}}render-vault-config.sh":
+    exists: true
+    mode: "0700"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    filetype: file
+  "{{vault_bin_dest}}init-vault-tls.sh":
+    exists: true
+    mode: "0700"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    filetype: file
 
 service:
   vault:
