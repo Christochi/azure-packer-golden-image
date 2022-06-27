@@ -1,4 +1,3 @@
 # vault settings
-vault_config_name: vault.hcl.j2
 systemd_unit_directory: /lib/systemd/system
 vault_data_path: /var/vault/data
