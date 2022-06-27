@@ -1,0 +1,13 @@
+- name: Copy Scripts
+  copy:
+    src: ~/DOU/packer/azure-packer-image/ansible/roles/configure_vault/files/
+    dest: "{{ vault_bin_dest }}"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0700
+  register: scripts
+
+- name: Confirm scripts were copied to /usr/local/bin/
+  debug:
+    msg: successfully copied
+  when: scripts is succeeded
