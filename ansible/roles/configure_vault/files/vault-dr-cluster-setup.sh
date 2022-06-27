@@ -25,6 +25,6 @@ echo "$VAULT_SECONDARY_CLUSTER_NAME token: $SEC_TOKEN"
 
 # on secondary
 echo "enabling Disaster Recovery on secondary"
-dr_req="curl -s --request POST --header \"X-Vault-Token: $VAULT_TOKEN_DR\" -d '{ \"token\": \"$SEC_TOKEN\", \"primary_api_addr\": \"$VAULT_ADDR\", \"ca_file\": \"/var/tls/vault/ca.pem\"}' $VAULT_ADDR_DR/v1/sys/replication/dr/secondary/enable"
+dr_req="curl -s --request POST --header \"X-Vault-Token: $VAULT_TOKEN_DR\" -d '{ \"token\": \"$SEC_TOKEN\", \"primary_api_addr\": \"$VAULT_ADDR\", \"ca_file\": \"/etc/vault.d/tls/ca.pem\"}' $VAULT_ADDR_DR/v1/sys/replication/dr/secondary/enable"
 DR_REQ=$(eval $dr_req)
 echo $DR_REQ
