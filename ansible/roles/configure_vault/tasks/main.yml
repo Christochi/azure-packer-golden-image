@@ -13,5 +13,8 @@
 - name: Call Task TLS-Certs
   import_tasks: tls-certs.yml
 
+- name: Call Task Scripts
+  import_tasks: scripts.yml
+
 - name: Call Task Vault-Service
   import_tasks: vault-service.yml
