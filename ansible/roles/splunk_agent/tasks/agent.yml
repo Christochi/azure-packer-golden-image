@@ -9,5 +9,5 @@
 
 - name: Confirm input.conf was copied to /etc/vault.d/splunk/
   debug:
-    msg: successfully created
+    msg: successfully copied
   when: splunk_agent is succeeded
