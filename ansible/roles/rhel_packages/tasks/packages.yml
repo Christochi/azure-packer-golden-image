@@ -22,4 +22,5 @@
       - wget
       - sudo
       - ufw
+      - openssl
     update_cache: true
