@@ -87,6 +87,12 @@ file:
     owner: "{{vault_user}}"
     group: "{{vault_group}}"
     filetype: file
+  "{{systemd_unit_directory}}/vault.service":
+    exists: true
+    mode: "0700"
+    owner: "{{vault_user}}"
+    group: "{{vault_group}}"
+    filetype: file
 
 service:
   vault:
