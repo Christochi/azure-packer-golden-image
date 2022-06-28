@@ -4,7 +4,7 @@
     dest: "{{ systemd_unit_directory }}/vault.service"
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
-    mode: 0777
+    mode: 0700
     force: true
   register: vault_service
 
