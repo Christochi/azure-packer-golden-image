@@ -1,7 +1,7 @@
 - name: Install Azure Package
   yum_repository:
     name: "{{ azure_package_name }}"
-    description: Packages-Microsoft-Com-Prod forRHEL 8 or CentOS Stream 8
+    description: Packages-Microsoft-Com-Prod for RHEL 8 or CentOS Stream 8
     file: "{{ azure_repo_name }}" # File name without the .repo extension to save the repo in. Defaults to the value of name
     baseurl: "{{ azure_repo_url }}"
     gpgcheck: true
