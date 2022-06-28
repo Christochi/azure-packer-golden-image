@@ -1,3 +1,4 @@
 # vault settings
 systemd_unit_directory: /lib/systemd/system
 vault_data_path: /var/vault/data
+vault_user_shell: /bin/false
