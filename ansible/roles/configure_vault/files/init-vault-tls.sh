@@ -9,4 +9,3 @@ echo $secret_result | base64 -d | openssl pkcs12 -clcerts -nokeys -passin pass: 
 echo $secret_result | base64 -d | openssl pkcs12 -cacerts -nokeys -chain -passin pass: | openssl x509 -out /opt/vault/tls/vault-ca.pem
 
 echo $secret_result | base64 -d | openssl pkcs12 -nocerts -nodes -passin pass: | openssl pkcs8 -nocrypt -out /opt/vault/tls/vault-key.pem
-
