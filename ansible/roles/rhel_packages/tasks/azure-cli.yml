@@ -13,6 +13,7 @@
     name: "{{ azure_repo_name }}"
     state: present
     update_cache: true
+    nobest: true # not limited to only best candidate packages. Will opt for a suitable package
   register: az_cli_install
 
 - name: Confirm Azure-CLI is Installed
