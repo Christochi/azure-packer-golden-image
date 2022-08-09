@@ -1,7 +1,7 @@
-# Azure Packer Image
+# Azure Packer Golden Image
 
 ## Description
-builds custom image using a base image from azure, downloads vault, azure cli, goss, uploads files, configurations and installs necessary applications in the custom image
+builds a golden image using a RHEL OS base image from azure, downloads vault, azure cli, goss, uploads files, configurations and installs necessary applications in the golden image
 
 ## Requirement
 - install packer
