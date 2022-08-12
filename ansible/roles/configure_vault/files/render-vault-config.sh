@@ -65,5 +65,5 @@ fi
 # │                render and store template                 │
 # ╰──────────────────────────────────────────────────────────╯
 while read tmpl;do
-  cat "${tmpl}" | envsubst > "/etc/vault.d/$(basename "${tmpl}") .tmpl"
+  cat "${tmpl}" | envsubst > "/etc/vault.d/$(basename "${tmpl}" .tmpl)"
 done < <(find "/var/vault.d" -type f -name "*.tmpl")
