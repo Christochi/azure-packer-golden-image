@@ -3,12 +3,12 @@ storage "raft" {
     # file system path where all the Vault data gets stored
     path = "{{ vault_data_path }}"
 
-    node_id = "${instance_name}" # node identifier
+    node_id = "${INSTANCE_NAME}" # node identifier
 
     retry_join {
-        auto_join = "provider=azure subscription_id=${subscription_id} resource_group=${resource_group_name} vm_scale_set=${vm_scale_set_name}"
+        auto_join = "provider=azure subscription_id=${SUBSCRIPTION_ID} resource_group=${RESOURCE_GROUP_NAME} vm_scale_set=${VM_SCALE_SET_NAME}"
         auto_join_scheme = "https"
-        leader_tls_servername = "${leader_tls_servername}"
+        leader_tls_servername = "${LEADER_TLS_SERVERNAME}"
         leader_ca_cert_file = "{{ vault_config_path }}/tls/ca.pem"
         leader_client_cert_file = "{{ vault_config_path }}/tls/cert.pem"
         leader_client_key_file = "{{ vault_config_path }}/tls/key.pem"
