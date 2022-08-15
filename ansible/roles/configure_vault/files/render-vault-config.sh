@@ -27,7 +27,7 @@ if [ -z "${LOCAL_IPV4+x}" ] || [ -z "${LOCAL_IPV4}" ]; then
 fi
 
 if [ -z "${TENANT_ID+x}" ] || [ -z "${TENANT_ID}" ]; then
-   echo >&2 "*** the 'TENANT_IDc' environment variable is required"
+   echo >&2 "*** the 'TENANT_ID' environment variable is required"
    exit 1 ;
 fi
 
