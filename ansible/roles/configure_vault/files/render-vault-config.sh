@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+cd /tmp
+
+[ -r "/etc/profile.d/vault.sh" ] &&  source "/etc/profile.d/vault.sh"
 # ╭──────────────────────────────────────────────────────────╮
 # │          ensure root is not runnint this script          │
 # ╰──────────────────────────────────────────────────────────╯
