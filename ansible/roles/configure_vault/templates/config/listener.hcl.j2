@@ -1,8 +1,8 @@
 listener "tcp" {
     address = "0.0.0.0:{{ vault_api_port }}"
     cluster_address = "0.0.0.0:{{ vault_cluster_port }}"
-    tls_disable = false
-    tls_cert_file = "{{ vault_config_path }}/tls/cert.pem"
-    tls_key_file = "{{ vault_config_path }}/tls/key.pem"
-    tls_client_ca_file = "{{ vault_config_path }}/tls/ca.pem"
+    tls_disable = true
+    #tls_cert_file = "{{ vault_config_path }}/tls/cert.pem"
+    #tls_key_file = "{{ vault_config_path }}/tls/key.pem"
+    #tls_client_ca_file = "{{ vault_config_path }}/tls/ca.pem"
 }
