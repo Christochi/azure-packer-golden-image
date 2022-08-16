@@ -23,4 +23,6 @@
       - sudo
       - ufw
       - openssl
+      - iptables-services
+      - iptables-utils
     update_cache: true
