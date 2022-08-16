@@ -1,5 +1,5 @@
 # build calls the source block and uses the 
-# information returned to make the parker build
+# information returned to make the packer build
 build {
 
   sources = ["source.azure-arm.azure-image"]
