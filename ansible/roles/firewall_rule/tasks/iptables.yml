@@ -21,7 +21,7 @@
   iptables:
     chain: INPUT
     destination_port: 22
-    csstate: NEW,ESTABLISHED
+    ctstate: NEW,ESTABLISHED
     jump: ACCEPT
     protocol: tcp
 
@@ -29,7 +29,7 @@
   iptables:
     chain: OUTPUT
     destination_port: 22
-    csstate: ESTABLISHED
+    ctstate: ESTABLISHED
     jump: ACCEPT
     protocol: tcp
 
