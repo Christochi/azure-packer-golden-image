@@ -1,0 +1,9 @@
+# when either condition is true, the tasks executes
+
+- name: Call IPtables Tasks
+  import_tasks: iptables.yml 
+  when: iptable == true
+
+- name: Call UFW Tasks
+  import_tasks: ufw.yml 
+  when: ufw == false
