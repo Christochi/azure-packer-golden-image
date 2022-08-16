@@ -1,13 +1,71 @@
-- name: Copy Scripts
+- name : Copy init_vault_tls Script
   copy:
-    src: ~/DOU/packer/azure-packer-image/ansible/roles/configure_vault/files/
+    src: files/init-vault-tls.sh
     dest: "{{ vault_bin_dest }}"
     owner: "{{ vault_user }}"
     group: "{{ vault_group }}"
     mode: 0700
-  register: scripts
+  register: init_script
 
-- name: Confirm scripts were copied to /usr/local/bin/
+- name: Confirm init_script was copied to /usr/local/bin
   debug:
     msg: successfully copied
-  when: scripts is succeeded
+  when: init_script is succeeded
+
+- name : Copy render_vault_config Script
+  copy:
+    src: files/render-vault-config.sh
+    dest: "{{ vault_bin_dest }}"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0700
+  register: render_script
+
+- name: Confirm render_script was copied to /usr/local/bin
+  debug:
+    msg: successfully copied
+  when: render_script is succeeded
+
+- name : Copy vault_dr_cluster_setup Script
+  copy:
+    src: files/vault-dr-cluster-setup.sh
+    dest: "{{ vault_bin_dest }}"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0700
+  register: dr_script
+
+- name: Confirm dr_script was copied to /usr/local/bin
+  debug:
+    msg: successfully copied
+  when: dr_script is succeeded
+
+- name : Upload Vault Replication File
+  copy:
+    src: files/replication.hcl
+    dest: "{{ vault_config_path }}/replication.hcl"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0700
+    force: true
+  register: vault_replication
+
+- name: Confirm Destination of Vault Replication File
+  debug:
+    msg: successfully copied
+  when: vault_replication is succeeded
+
+- name : Upload Vault Telemetry File
+  copy:
+    src: files/telemetry.hcl
+    dest: "{{ vault_config_path }}/telemetry.hcl"
+    owner: "{{ vault_user }}"
+    group: "{{ vault_group }}"
+    mode: 0700
+    force: true
+  register: vault_telemetry
+
+- name: Confirm Destination of Vault Telemetry File
+  debug:
+    msg: successfully copied
+  when: vault_telemetry is succeeded
