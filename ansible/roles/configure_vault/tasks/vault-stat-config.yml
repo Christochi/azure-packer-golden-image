@@ -27,33 +27,3 @@
   debug:
     msg: successfully uploaded
   when: vault_listener is succeeded
-
-- name: Upload Vault Replication Template
-  template:
-    src: config/replication.hcl.j2
-    dest: "{{ vault_config_path }}/replication.hcl"
-    owner: "{{ vault_user }}"
-    group: "{{ vault_group }}"
-    mode: 0700
-    force: true
-  register: vault_replication
-
-- name: Confirm Destination of Vault Replication Template
-  debug:
-    msg: successfully uploaded
-  when: vault_replication is succeeded
-
-- name: Upload Vault Telemetry Template
-  template:
-    src: config/telemetry.hcl.j2
-    dest: "{{ vault_config_path }}/telemetry.hcl"
-    owner: "{{ vault_user }}"
-    group: "{{ vault_group }}"
-    mode: 0700
-    force: true
-  register: vault_telemetry
-
-- name: Confirm Destination of Vault Telemetry Template
-  debug:
-    msg: successfully uploaded
-  when: vault_telemetry is succeeded
