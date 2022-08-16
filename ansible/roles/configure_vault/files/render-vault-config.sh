@@ -3,7 +3,9 @@ set -euo pipefail
 
 cd /tmp
 
+# check file exist
 [ -r "/etc/profile.d/vault.sh" ] &&  source "/etc/profile.d/vault.sh"
+
 # ╭──────────────────────────────────────────────────────────╮
 # │          ensure root is not runnint this script          │
 # ╰──────────────────────────────────────────────────────────╯
@@ -68,5 +70,5 @@ fi
 # │                render and store template                 │
 # ╰──────────────────────────────────────────────────────────╯
 while read tmpl;do
-  cat "${tmpl}" | envsubst > "/etc/vault.d/$(basename "${tmpl}" .tmpl)"
+  cat "${tmpl}" | envsubst > "/etc/vault.d/$(basename -s .tmpl "${tmpl}")"
 done < <(find "/var/vault.d" -type f -name "*.tmpl")
