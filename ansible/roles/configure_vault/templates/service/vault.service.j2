@@ -12,8 +12,8 @@ ConditionFileNotEmpty={{tmpl_vault_config_path}}/config-root.hcl.tmpl
 ConditionFileNotEmpty=/usr/local/bin/render-vault-config.sh
 ConditionFileNotEmpty=/usr/local/bin/init-vault-tls.sh
 
-StartLimitIntervalSec=60
-StartLimitBurst=3
+#StartLimitIntervalSec=60
+#StartLimitBurst=3
 
 [Service]
 User={{vault_user}}
@@ -44,9 +44,9 @@ KillSignal=SIGINT
 Restart=on-failure
 RestartSec=5
 TimeoutStopSec=30
-StartLimitInterval=60
-StartLimitIntervalSec=60
-StartLimitBurst=3
+#StartLimitInterval=60
+#StartLimitIntervalSec=60
+#StartLimitBurst=3
 LimitNOFILE=65536
 LimitMEMLOCK=infinity
 
