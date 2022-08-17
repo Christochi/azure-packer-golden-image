@@ -18,14 +18,14 @@ StartLimitBurst=3
 [Service]
 User={{vault_user}}
 Group={{vault_group}}
-LogLevel=trace
-ProtectSystem=full
+#LogLevel=trace
+#ProtectSystem=full
 ProtectHome=read-only
 PrivateTmp=yes
 PrivateDevices=yes
 SecureBits=keep-caps
 AmbientCapabilities=CAP_IPC_LOCK
-Capabilities=CAP_IPC_LOCK+ep
+#Capabilities=CAP_IPC_LOCK+ep
 CapabilityBoundingSet=CAP_SYSLOG CAP_IPC_LOCK
 NoNewPrivileges=yes
 #ExecStartPre=/usr/local/bin/init-vault-tls.sh
