@@ -40,6 +40,13 @@
     jump: ACCEPT
     protocol: tcp
 
+- name: Firewall rule - allow port 8200/HTTP traffic
+  iptables:
+    chain: OUTPUT
+    destination_port: "{{ vault_api_port }}"
+    jump: ACCEPT
+    protocol: tcp
+
 - name: Firewall rule - allow port 8201/HTTPS traffic
   iptables:
     chain: INPUT
