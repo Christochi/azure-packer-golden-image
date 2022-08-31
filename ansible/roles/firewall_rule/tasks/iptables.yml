@@ -53,3 +53,10 @@
     destination_port: "{{ vault_cluster_port }}"
     jump: ACCEPT
     protocol: tcp
+
+- name: Firewall rule - allow port 8201/HTTPS traffic
+  iptables:
+    chain: OUTPUT
+    destination_port: "{{ vault_cluster_port }}"
+    jump: ACCEPT
+    protocol: tcp
