@@ -65,7 +65,7 @@
   systemd:
     name: firewalld
     state: stopped
-    enabled: no
+    enabled: false
   notify: 
   - Populate Service Facts
   - Print Firewalld Status
