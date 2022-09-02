@@ -1,0 +1,6 @@
+- name: Populate Service Facts
+  service_facts:
+
+- name: Print Firewalld Status
+  debug:
+    var: ansible_facts.services['firewalld.service'].state
