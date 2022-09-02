@@ -60,3 +60,12 @@
     destination_port: "{{ vault_cluster_port }}"
     jump: ACCEPT
     protocol: tcp
+
+- name: Ensure firewalld service is disabled and stopped
+  systemd:
+    name: firewalld
+    state: stopped
+    enabled: no
+  notify: 
+  - Populate Service Facts
+  - Print Firewalld Status
