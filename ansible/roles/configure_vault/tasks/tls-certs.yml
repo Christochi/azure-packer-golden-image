@@ -8,7 +8,7 @@
     recurse: true
   register: tls_certs
 
-- name: Confirm Creation of Vault Server TLS Certificates
+- name: Confirm Creation of Vault Server TLS Certificates Directory
   debug:
     msg: successfully created
   when: tls_certs is succeeded
