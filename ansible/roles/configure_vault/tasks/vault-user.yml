@@ -5,4 +5,3 @@
     shell: "{{ vault_user_shell }}" # not a login account
     home: "{{ vault_config_path }}"
     createhome: false
-    append: true
