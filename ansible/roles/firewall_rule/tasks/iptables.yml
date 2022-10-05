@@ -9,7 +9,7 @@
 
 - name: Copy iptables file
   copy:
-    src: files/iptable.conf
+    src: files/iptables
     dest: "/etc/sysconfig/iptables"
     owner: "root"
     group: "root"
@@ -23,7 +23,7 @@
 
 - name: Copy content to rc.local file
   lineinfile:
-    line: sudo iptables-restore < /etc/sysconfig/iptables/iptable.conf
+    line: sudo iptables-restore < /etc/sysconfig/iptables
     path: /etc/rc.local
   register: iptables_restore
 
