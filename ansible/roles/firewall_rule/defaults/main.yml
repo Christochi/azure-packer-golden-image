@@ -1,3 +1,4 @@
 vault_firewall_rule: /etc/ufw/applications.d/vault
 
+# put the name of the firewall rule task you want to call
 firewall_file: iptables.yml
