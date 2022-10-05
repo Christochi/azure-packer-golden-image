@@ -1,66 +1,3 @@
-- name: Firewall rule - allow all loopback traffic
-  iptables:
-    action: append
-    chain: INPUT
-    in_interface: lo
-    jump: ACCEPT
-
-- name: Firewall rule - allow established connections
-  iptables:
-    chain: INPUT
-    ctstate: ESTABLISHED,RELATED
-    jump: ACCEPT
-
-- name: Firewall rule - allow port ping traffic
-  iptables:
-    chain: INPUT
-    jump: ACCEPT
-    protocol: icmp
-
-- name: Firewall rule - allow input 22/SSH 
-  iptables:
-    chain: INPUT
-    destination_port: 22
-    ctstate: NEW,ESTABLISHED
-    jump: ACCEPT
-    protocol: tcp
-
-- name: Firewall rule - allow output 22/SSH 
-  iptables:
-    chain: OUTPUT
-    destination_port: 22
-    ctstate: ESTABLISHED
-    jump: ACCEPT
-    protocol: tcp
-
-- name: Firewall rule - allow port 8200/HTTP traffic
-  iptables:
-    chain: INPUT
-    destination_port: "{{ vault_api_port }}"
-    jump: ACCEPT
-    protocol: tcp
-
-- name: Firewall rule - allow port 8200/HTTP traffic
-  iptables:
-    chain: OUTPUT
-    destination_port: "{{ vault_api_port }}"
-    jump: ACCEPT
-    protocol: tcp
-
-- name: Firewall rule - allow port 8201/HTTPS traffic
-  iptables:
-    chain: INPUT
-    destination_port: "{{ vault_cluster_port }}"
-    jump: ACCEPT
-    protocol: tcp
-
-- name: Firewall rule - allow port 8201/HTTPS traffic
-  iptables:
-    chain: OUTPUT
-    destination_port: "{{ vault_cluster_port }}"
-    jump: ACCEPT
-    protocol: tcp
-
 - name: Ensure firewalld service is disabled and stopped
   systemd:
     name: firewalld
@@ -69,3 +6,37 @@
   notify: 
   - Populate Service Facts
   - Print Firewalld Status
+
+- name: Copy iptables file
+  copy:
+    src: files/iptable.conf
+    dest: "/etc/sysconfig/iptables"
+    owner: "root"
+    group: "root"
+    mode: 0600
+  register: iptables_file
+
+- name: Confirm iptables_file was copied
+  debug:
+    msg: successfully copied
+  when: iptables_file is succeeded
+
+- name: Copy content to rc.local file
+  lineinfile:
+    line: sudo iptables-restore < /etc/sysconfig/iptables/iptable.conf
+    path: /etc/rc.local
+  register: iptables_restore
+
+- name: Confirm content was copied to rc.local file
+  debug:
+    msg: successfully copied
+  when: iptables_restore is succeeded
+
+- name: Add execute permision to rc.local file
+  command: "chmod +x /etc/rc.local"
+  register: rc_local
+
+- name: Confirm rc.local permission changed
+  debug:
+    msg: successfully executed
+  when: rc_local is succeeded
