@@ -1,9 +1,2 @@
-# when either condition is true, the task executes
-
 - name: Call IPtables Tasks
-  import_tasks: iptables.yml 
-  # when: iptable 
-
-# - name: Call UFW Tasks
-#   import_tasks: ufw.yml 
-#   when: not iptable
+  import_tasks: "{{ firewall_file }}" 
