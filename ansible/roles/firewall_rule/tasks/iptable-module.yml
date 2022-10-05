@@ -1,0 +1,62 @@
+- name: Firewall rule - allow all loopback traffic
+  iptables:
+    action: append
+    chain: INPUT
+    in_interface: lo
+    jump: ACCEPT
+
+- name: Firewall rule - allow established connections
+  iptables:
+    chain: INPUT
+    ctstate: ESTABLISHED,RELATED
+    jump: ACCEPT
+
+- name: Firewall rule - allow port ping traffic
+  iptables:
+    chain: INPUT
+    jump: ACCEPT
+    protocol: icmp
+
+- name: Firewall rule - allow input 22/SSH 
+  iptables:
+    chain: INPUT
+    destination_port: 22
+    ctstate: NEW,ESTABLISHED
+    jump: ACCEPT
+    protocol: tcp
+
+- name: Firewall rule - allow output 22/SSH 
+  iptables:
+    chain: OUTPUT
+    destination_port: 22
+    ctstate: ESTABLISHED
+    jump: ACCEPT
+    protocol: tcp
+
+- name: Firewall rule - allow port 8200/HTTP traffic
+  iptables:
+    chain: INPUT
+    destination_port: "{{ vault_api_port }}"
+    jump: ACCEPT
+    protocol: tcp
+
+- name: Firewall rule - allow port 8200/HTTP traffic
+  iptables:
+    chain: OUTPUT
+    destination_port: "{{ vault_api_port }}"
+    jump: ACCEPT
+    protocol: tcp
+
+- name: Firewall rule - allow port 8201/HTTPS traffic
+  iptables:
+    chain: INPUT
+    destination_port: "{{ vault_cluster_port }}"
+    jump: ACCEPT
+    protocol: tcp
+
+- name: Firewall rule - allow port 8201/HTTPS traffic
+  iptables:
+    chain: OUTPUT
+    destination_port: "{{ vault_cluster_port }}"
+    jump: ACCEPT
+    protocol: tcp
