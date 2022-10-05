@@ -1,4 +1,3 @@
 vault_firewall_rule: /etc/ufw/applications.d/vault
 
-ufw: false
-iptable: true
+firewall_file: iptables.yml
